@@ -1,8 +1,32 @@
-$content = array('subject'=> 'My subject', 'html'=> 'my html' , 'text' =>'my test');
+<?php
 
-$param = array('tag'=>array('invoice1'), 'mailfrom'=> 'ntoper@critsend.com', 'mailfrom_friendly'=> 'Nicolas Toper', 'replyto'=>'ntoper@critsend.com', 'replyto_filtered'=> 'true');
+include 'CritSendphpconnector.php'
 
-$emails[0] = array('email'=>'happy@customer.com', 'field1'=> 'test');
+$mxm = new MxmConnect();
+
+$content = array(
+   'subject'=> 'My subject',
+   'html'=> '<html><body><H1> TEST CONTENT</H1></body></html>' ,
+   'text' =>'Test content'
+);
+
+$param = array(
+   'tag'=>array(
+      'test',
+      'test2'
+   ), 
+   'mailfrom'=> 'noreply@critsend.com', 
+   'mailfrom_friendly'=> 'Sender Exemple', 
+   'replyto'=>'ntoper@critsend.com', 'replyto_filtered'=> 'true');
+
+$emails[] = array(
+   'email'=>'happy@customer.com', 
+   'field1'=> 'test'
+);
+$emails[] = array(
+   'email'=>'new@customer.com', 
+   'field1'=> 'test'
+);
 
 }
    try {
